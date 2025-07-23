@@ -1,0 +1,6 @@
+Lecture et navigation
+● US006 : En tant qu’utilisateur, je veux consulter les derniers articles publiés.
+● US007 : En tant qu’utilisateur, je veux rechercher ou filtrer les articles par auteur ou
+popularité.
+● US008 : En tant que lecteur, je veux consulter un article avec son contenu formaté et le
+nom de l’auteur.
