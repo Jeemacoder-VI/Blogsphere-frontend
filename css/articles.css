@@ -1,0 +1,131 @@
+/*Je declare les variables que je vais utiliser le plus dans mon code .  */
+:root {
+    --bg-color: #D1ECF1;
+    --font-text: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    --bg-color: #D1ECF1;
+    --font-text: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    --primary-green: #1a8917;
+    --secondary-teal: #41c9b4;
+    --text-dark: #242424;
+    --text-gray: #6b6b6b;
+    --border-light: #e6e6e6;
+    --white: #ffffff;
+    --black: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    line-height: 1.6;
+    color: #242424;
+    background-color: #D1ECF1;
+    max-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar input[type="search"] {
+    background: #f8f9fa;
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    padding: 8px 16px;
+    font-size: 14px;
+    width: 300px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.navbar input[type="search"]:focus {
+    background: var(--white);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(26, 137, 23, 0.1);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.write-icon,
+.notif-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--black);
+}
+
+.write-icon:hover,
+.notif-icon:hover {
+    background: var(--black);
+    color: var(--bg-color);
+}
+
+.user-profile-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary-green), var(--secondary-teal));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.user-profile-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Bannière publicitaire */
+.pub-espace {
+    background: linear-gradient(90deg, var(--primary-green), var(--secondary-teal));
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.pub-espace h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pub-espace span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}

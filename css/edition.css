@@ -1,0 +1,287 @@
+.edition-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(107,107,255,0.10);
+    padding: 32px 24px;
+}
+.edition-form h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    color: #242424;
+}
+.step {
+    display: none;
+    animation: fadeInUp 0.7s cubic-bezier(.23,1.01,.32,1) both;
+}
+.step-active {
+    display: block;
+}
+.edition-form h2 {
+    font-size: 1.2rem;
+    color: #6B6BFF;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+.edition-form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #242424;
+    font-weight: 500;
+}
+.edition-form input[type="text"],
+.edition-form input[type="date"],
+.edition-form select {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    background: #f7f7fa;
+    transition: box-shadow 0.2s;
+}
+.edition-form input:focus,
+.edition-form select:focus {
+    box-shadow: 0 0 0 2px #6B6BFF33;
+    outline: none;
+}
+.edition-form input[type="file"] {
+    margin-bottom: 18px;
+}
+.cover-preview, .avatar-preview {
+    margin-bottom: 18px;
+    text-align: center;
+}
+.cover-preview img, .avatar-preview img {
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(107,107,255,0.10);
+}
+.next-btn, .prev-btn, .publish-btn, .previsualisation {
+    background: #010101;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 8px 8px 0 0;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(107,107,255,0.10);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.next-btn:hover, .prev-btn:hover, .publish-btn:hover, .previsualisation:hover {
+    background: #0f5d0c;
+    transform: translateY(-2px);
+}
+.summary {
+    background: #f7f7fa;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 18px;
+    color: #242424;
+    font-size: 1rem;
+}
+.rich-editor-container {
+    margin-bottom: 18px;
+}
+.rich-toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.rich-toolbar button {
+    background: #f7f7fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #6B6BFF;
+    transition: background 0.2s, color 0.2s;
+}
+.rich-toolbar button:hover {
+    background: #6B6BFF;
+    color: #fff;
+}
+.rich-editor {
+    min-height: 180px;
+    background: #f7f7fa;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    font-size: 1rem;
+    color: #242424;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+.rich-editor:focus {
+    box-shadow: 0 0 0 2px #6B6BFF33;
+}
+.conteneur {
+    margin-bottom: 18px;
+    background: #f7f7fa;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(107,107,255,0.06);
+}
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+.option-button, .adv-option-button {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #6B6BFF;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.option-button:hover, .adv-option-button:hover {
+    background: #6B6BFF;
+    color: #fff;
+}
+.trait {
+    display: none;
+}
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 8px;
+}
+.input-wrapper label {
+    font-size: 0.95rem;
+    color: #242424;
+}
+.pages-container {
+    margin-bottom: 18px;
+}
+.page {
+    min-height: 180px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    font-size: 1rem;
+    color: #242424;
+    outline: none;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(107,107,255,0.06);
+}
+.page:focus {
+    box-shadow: 0 0 0 2px #6B6BFF33;
+}
+select.adv-option-button {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #242424;
+    font-size: 1rem;
+    margin-right: 8px;
+}
+.active-btn {
+    background: #6B6BFF !important;
+    color: #fff !important;
+    box-shadow: 0 2px 8px rgba(107,107,255,0.18);
+    border: 1.5px solid #6B6BFF;
+}
+/* Styles pour le popup de prévisualisation */
+.preview-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(30,30,40,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.preview-popup .blog-article {
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  width: min(700px, 95vw);
+  padding: 2rem;
+  padding-top: 4rem;
+  position: relative;
+}
+.close-preview {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .edition-container {
+        padding: 16px 8px;
+    }
+    .edition-form h1 {
+        font-size: 1.3rem;
+    }
+    .conteneur {
+        padding: 6px;
+    }
+    .options {
+        gap: 4px;
+    }
+    .page {
+        padding: 8px;
+    }
+}
+@media (max-width: 600px) {
+  .preview-popup .blog-article {
+    width: 98vw;
+    padding: 1rem;
+    max-height: 95vh;
+  }
+  .close-preview {
+    top: 12px;
+    right: 12px;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+    .preview-content {
+        max-width: 98vw;
+        padding: 0;
+    }
+    .preview-content .blog-article {
+        padding: 16px 8px;
+    }
+}
