@@ -2,7 +2,34 @@
 :root {
     --bg-color: #D1ECF1;
     --font-text: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    --bg-color: #D1ECF1;
+    --font-text: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    --primary-green: #1a8917;
+    --secondary-teal: #41c9b4;
+    --text-dark: #242424;
+    --text-gray: #6b6b6b;
+    --border-light: #e6e6e6;
+    --white: #ffffff;
+    --black: black;
+    --bg-color: #D1ECF1;
+    --font-text: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    line-height: 1.6;
+    color: #242424;
+    background-color: #D1ECF1;
+    max-height: 100vh;
+}
+
 
 * {
     margin: 0;
@@ -169,6 +196,7 @@ body {
     color: #242424;
 }
 
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     #navbar {
@@ -246,6 +274,10 @@ body {
 
     .hero p {
         font-size: 18px;
+    }
+
+    .nav-text {
+        display: flex !important;
     }
 }
 
