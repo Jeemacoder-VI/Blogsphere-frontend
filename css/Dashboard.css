@@ -1,0 +1,579 @@
+/* Importation de la police Inter de Google Fonts - Présente dans les fichiers d'inspiration */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Variables CSS personnalisées (inspirées des fichiers fournis et adaptées au cahier des charges) */
+:root {
+    --primary-color: #333; /* Noir pour les titres, texte principal */
+    --secondary-color: #555; /* Gris foncé pour texte secondaire */
+    --background-color: #f9f9f9; /* Fond très clair, presque blanc */
+    --surface-color: #ffffff; /* Blanc pour les cartes et éléments sur fond */
+    --border-color: #eee; /* Bordures subtiles */
+    --link-color: #007bff; /* Bleu standard pour les liens */
+    --link-hover-color: #0056b3;
+    --danger-color: #dc3545; /* Rouge pour les actions de suppression */
+    --success-color: #28a745; /* Vert pour les actions positives */
+    --button-primary-bg: #333; /* Bouton principal noir/gris foncé */
+    --button-primary-text: #ffffff;
+    --button-secondary-bg: #f0f0f0; /* Bouton secondaire clair */
+    --button-secondary-text: #333;
+    --button-danger-bg: #dc3545;
+    --button-danger-text: #ffffff;
+    --shadow-light: 0 2px 4px rgba(0,0,0,0.05); /* Ombre légère pour les cartes */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 1rem; /* 16px */
+    --spacing-md: 1.5rem; /* 24px */
+    --spacing-lg: 2rem; /* 32px */
+    --spacing-xl: 3rem; /* 48px */
+}
+
+/* Réinitialisation de base (inspiré des fichiers fournis) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Mise en page générale */
+.dashboard-content {
+    max-width: 1000px; /* Largeur maximale pour un contenu lisible, comme Medium */
+    margin: var(--spacing-lg) auto; /* Centrage et espacement */
+    padding: 0 var(--spacing-sm); /* Padding latéral pour mobile */
+}
+
+/* Header */
+.main-header {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-light);
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petit écran */
+}
+
+.main-header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.header-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-sm) 0; /* Espacement sur mobile */
+}
+
+.header-nav .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.header-nav .nav-link:hover {
+    background-color: var(--background-color);
+}
+
+.user-profile-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-sm) 0; /* Espacement sur mobile */
+}
+
+.user-profile-summary .profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+}
+
+.user-profile-summary .profile-name {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Sections du Dashboard */
+section {
+    background-color: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--spacing-lg); /* Espacement entre les sections */
+}
+
+section h2, section h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.dashboard-overview h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.dashboard-overview .tagline {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Boutons génériques */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 10px #00f2fe, 0 0 20px #4facfe;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f2fe, 0 0 40px #4facfe;
+}
+
+.btn-secondary {
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-danger {
+    background-color: var(--button-danger-bg);
+    color: var(--button-danger-text);
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Rouge un peu plus foncé */
+}
+
+/* Bouton "Créer un article" */
+.create-article-btn {
+    font-size: 1.1rem;
+    display: block; /* Prend toute la largeur sur mobile */
+    width: fit-content; /* S'adapte au contenu sur desktop */
+    margin-top: var(--spacing-md);
+}
+/* Pour le centrer si besoin ou le laisser à gauche sur mobile */
+@media (min-width: 768px) {
+    .create-article-btn {
+        display: inline-block; /* Reviens en inline-block sur desktop */
+    }
+}
+
+
+/* Liste d'articles */
+.articles-list {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: 1fr; /* Une colonne par défaut pour mobile */
+}
+
+.article-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    background-color: var(--surface-color);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.article-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-color);
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.article-stats {
+    display: flex;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.article-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur mobile */
+}
+
+.article-actions .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Statistiques générales */
+.overall-stats h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* S'adapte aux colonnes */
+    gap: var(--spacing-md);
+}
+
+.stat-item {
+    background-color: var(--background-color); /* Couleur de fond légèrement différente */
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.stat-item h4 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-item p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+
+/* Styles responsives (Mobile-First) */
+
+/* Pour les écrans de taille moyenne (tablettes et petits ordinateurs) */
+@media (min-width: 768px) {
+    .main-header {
+        padding: var(--spacing-sm) var(--spacing-xl); /* Plus de padding sur les côtés */
+    }
+
+    .header-nav {
+        margin: 0; /* Pas de marge supplémentaire */
+    }
+
+    .user-profile-summary {
+        margin: 0; /* Pas de marge supplémentaire */
+    }
+
+    .dashboard-content {
+        padding: 0 var(--spacing-md); /* Un peu plus de padding sur les côtés */
+    }
+
+    .articles-list {
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur tablette */
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr); /* Quatre colonnes sur tablette/desktop */
+    }
+}
+
+/* Pour les grands écrans (ordinateurs de bureau) */
+@media (min-width: 1024px) {
+    .main-header {
+        padding: var(--spacing-sm) var(--spacing-xl);
+    }
+
+    .articles-list {
+        grid-template-columns: repeat(3, 1fr); /* Trois colonnes sur grands écrans */
+    }
+}
+/* Styles pour la modale de confirmation */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Reste en place même en scrollant */
+    z-index: 1000; /* Assure qu'elle est au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permet le scroll si le contenu est trop grand */
+    background-color: rgba(0,0,0,0.6); /* Fond semi-transparent noir */
+    display: flex; /* Pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    opacity: 0; /* Pour l'animation d'apparition/disparition */
+    visibility: hidden; /* Pour que la modale ne soit pas interactive quand masquée */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transition douce */
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--surface-color); /* Blanc */
+    margin: auto; /* Pour centrage IE/Edge */
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Ombre plus prononcée */
+    width: 90%; /* Largeur sur mobile */
+    max-width: 500px; /* Largeur max sur desktop */
+    position: relative;
+    transform: translateY(-50px); /* Pour l'animation d'apparition */
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0); /* Retour à la position normale */
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    margin-bottom: var(--spacing-md);
+    color: var(--secondary-color);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end; /* Alignement des boutons à droite */
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Styles responsives pour la modale si nécessaire (déjà géré par max-width et width:90%) */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: var(--spacing-md);
+    }
+    .modal-actions {
+        flex-direction: column; /* Boutons en colonne sur très petit écran */
+    }
+    .modal-actions .btn {
+        width: 100%; /* Les boutons prennent toute la largeur */
+    }
+}
+
+.relative {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+#change-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #06b6d4;
+    color: white;
+    border-radius: 9999px;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+#change-avatar-btn:hover {
+    background-color: #03989e;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Un exemple de liste d'experts façon DevelopmentAid */
+.experts-list {
+    background-color: #f3f4f6; /* Couleur de fond gris clair */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    padding: 2.5rem 0; /* Espacement vertical */
+}
+
+.experts-list .search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.experts-list .search-bar input {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+.experts-list .search-bar input:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.experts-list .search-bar button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.experts-list .search-bar button:hover {
+    background-color: #1d4ed8;
+}
+
+.experts-list .expert-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experts-list .expert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.experts-list .expert-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #2563eb;
+}
+
+.experts-list .expert-card .expert-info {
+    flex: 1;
+}
+
+.experts-list .expert-card .expert-info .expert-name {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: #111827;
+}
+
+.experts-list .expert-card .expert-info .expert-status {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.experts-list .expert-card .expert-info .expert-location {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.experts-list .expert-card .expert-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.experts-list .expert-card .expert-actions .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.experts-list .expert-card .expert-actions .btn-primary {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+}
+
+.experts-list .expert-card .expert-actions .btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.experts-list .expert-card .expert-actions .btn-secondary {
+    background-color: #f3f4f6;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.experts-list .expert-card .expert-actions .btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+.experts-list .expert-card .expert-actions .btn-message {
+    background-color: #f9fafb;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.experts-list .expert-card .expert-actions .btn-message:hover {
+    background-color: #f3f4f6;
+}
+
+/* Styles pour la liste d'experts (fin) */

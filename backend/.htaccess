@@ -1,0 +1,25 @@
+# Sécurité du dossier backend
+Options -Indexes
+ServerSignature Off
+
+# Empêcher l'accès direct aux fichiers de configuration
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Empêcher l'accès direct aux fichiers de base de données
+<Files "*.sql">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Autoriser seulement les fichiers PHP nécessaires
+<FilesMatch "\.(php)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Redirection des erreurs
+ErrorDocument 403 /Frontend/backend/api/connexion.php
+ErrorDocument 404 /Frontend/backend/api/connexion.php 
