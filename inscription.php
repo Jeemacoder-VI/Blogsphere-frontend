@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require_once __DIR__ . '/backend/config/config.php';
 require_once __DIR__ . '/backend/classes/database.php';
 require_once __DIR__ . '/backend/classes/user.php';
@@ -60,6 +61,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $erreur = $e->getMessage();
             }
         }
+=======
+// Affichage des erreurs pour le debug
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+require_once './classes/database.php';
+require_once './classes/user.php';
+
+$user = new User();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo "<strong>Formulaire soumis</strong><br>";
+
+    $username = $_POST['username'] ?? '';
+    $email    = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $bio      = $_POST['bio'] ?? '';
+    $avatar   = null;
+
+    // Gestion de l'avatar
+    if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = '../uploads/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        $filename = uniqid() . '_' . basename($_FILES['avatar']['name']);
+        $targetPath = $uploadDir . $filename;
+
+        if (move_uploaded_file($_FILES['avatar']['tmp_name'], $targetPath)) {
+            $avatar = $targetPath;
+        } else {
+            echo "<script>alert(\"Erreur lors de l'enregistrement de l'avatar.\");</script>";
+            exit;
+        }
+    }
+
+    // Vérifie que tous les champs nécessaires sont remplis
+    if (!empty($username) && !empty($email) && !empty($password)) {
+        try {
+            $success = $user->register($username, $email, $password, $bio, $avatar);
+
+            if ($success) {
+                echo "<script>alert('Inscription réussie !');</script>";
+                header('location:connexion.php');
+            } else {
+                echo "<script>alert(\"Erreur lors de l'inscription.\");</script>";
+            }
+        } catch (Exception $e) {
+            echo "<script>alert('Erreur : " . addslashes($e->getMessage()) . "');</script>";
+        }
+    } else {
+        echo "<script>alert('Veuillez remplir tous les champs obligatoires.');</script>";
+>>>>>>> 9753f2bec9db907ee47f7ab15b91d8935754a47a
     }
 }
 ?>
@@ -75,6 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="logo">Blogsphere</div>
         <h2>Créer un compte</h2>
 
+<<<<<<< HEAD
         <?php if (!empty($erreur)): ?>
             <div class="error-message"><?php echo htmlspecialchars($erreur); ?></div>
         <?php endif; ?>
@@ -86,6 +142,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Nom/pseudo</label>
+=======
+        <form action="inscription.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Nom</label>
+>>>>>>> 9753f2bec9db907ee47f7ab15b91d8935754a47a
                 <input type="text" id="name" name="username" required>
             </div>
 
